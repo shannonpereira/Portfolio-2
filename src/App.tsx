@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     if (isLoading) return;
 
-    const sections = ["home", "work", "resume", "explorations", "contact"];
+    const sections = ["home", "projects", "work", "skills", "contact"];
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;

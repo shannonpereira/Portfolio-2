@@ -59,7 +59,6 @@ export const Contact: React.FC = () => {
     { name: "LinkedIn", url: "https://www.linkedin.com/in/shannon-pereira-b999b7228/" },
     { name: "GitHub", url: "https://github.com/shannonpereira" },
     { name: "Email", url: "mailto:shannonpereira1402@gmail.com" },
-    { name: "Phone", url: "tel:+919741644427" }
   ];
 
   return (
@@ -109,13 +108,13 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* CTA Container */}
-        <div className="text-center px-6 max-w-2xl mb-20 select-none">
+        <div className="relative z-20 text-center px-6 max-w-2xl mb-20 select-none">
           <span className="text-xs text-muted uppercase tracking-[0.3em] mb-4 block">
             Let's work together
           </span>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display italic text-text-primary mb-10 leading-none">
             Let's make something <br />
-            beautiful.
+            beautiful together.
           </h2>
 
           {/* Email button with gradient hover border */}

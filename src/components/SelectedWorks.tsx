@@ -93,7 +93,7 @@ export const SelectedWorks: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="work" className="bg-bg py-16 md:py-24 border-t border-stroke/20">
+    <section id="projects" className="bg-bg py-16 md:py-24 border-t border-stroke/20">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
         <motion.div

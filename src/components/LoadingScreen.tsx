@@ -11,10 +11,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   const [count, setCount] = useState(0);
   const [wordIndex, setWordIndex] = useState(0);
 
-  // Counter using requestAnimationFrame over 2700ms
+  // Counter using requestAnimationFrame over 3500ms
   useEffect(() => {
     let startTimestamp: number | null = null;
-    const duration = 2700; // 2700ms
+    const duration = 3500; // 3500ms for safer asset loading
 
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
@@ -26,21 +26,21 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         window.requestAnimationFrame(step);
       } else {
         setCount(100);
-        // On complete: 400ms delay then call onComplete
+        // On complete: 500ms delay then call onComplete
         setTimeout(() => {
           onComplete();
-        }, 400);
+        }, 500);
       }
     };
 
     window.requestAnimationFrame(step);
   }, [onComplete]);
 
-  // Rotate words every 900ms (3 words * 900ms = 2700ms total)
+  // Rotate words every 1166ms (3 words * 1166ms = 3500ms total)
   useEffect(() => {
     const wordInterval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
-    }, 900);
+    }, 1166);
 
     return () => clearInterval(wordInterval);
   }, []);
@@ -79,7 +79,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       <div className="flex flex-col gap-6">
         <div className="flex justify-end items-end">
           <span className="text-6xl md:text-8xl lg:text-9xl font-display text-text-primary/90 leading-none tabular-nums select-none">
-            {String(count).padStart(3, "0")}
+            {count}%
           </span>
         </div>
 

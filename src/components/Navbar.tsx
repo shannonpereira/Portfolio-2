@@ -9,6 +9,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoHovered, setLogoHovered] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,26 +25,30 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavClick }) => 
 
   const navLinks = [
     { label: "Home", id: "home" },
+    { label: "Projects", id: "projects" },
     { label: "Work", id: "work" },
-    { label: "Resume", id: "resume" }
+    { label: "Skills", id: "skills" },
   ];
 
+  const handleMobileNavClick = (sectionId: string) => {
+    setMenuOpen(false);
+    onNavClick(sectionId);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 md:pt-6 px-4 select-none">
+    <nav className={`fixed top-0 left-0 right-0 z-50 flex ${menuOpen ? "justify-center" : "justify-start"} md:justify-center pt-4 md:pt-6 px-4 select-none`}>
       <div
-        className={`inline-flex items-center rounded-full backdrop-blur-md border border-white/10 bg-surface/80 px-2 py-1.5 transition-all duration-300 ${
+        className={`inline-flex flex-wrap items-center justify-center gap-1 rounded-full backdrop-blur-md border border-white/10 bg-surface/80 transition-all duration-300 ${menuOpen ? "w-full max-w-[900px] px-4 py-2" : "px-2 py-1.5"} ${
           isScrolled ? "shadow-lg shadow-black/40 bg-surface/95" : ""
-        }`}
-      >
+        }`}>
         {/* 1. Logo */}
         <motion.button
-          onClick={() => onNavClick("home")}
+          onClick={() => handleMobileNavClick("home")}
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
           whileHover={{ scale: 1.1 }}
           className="relative w-9 h-9 rounded-full flex items-center justify-center overflow-hidden cursor-pointer"
         >
-          {/* Logo accent ring (reverses background gradient rotation on hover) */}
           <div
             className={`absolute inset-0 transition-transform duration-700 ${
               logoHovered ? "rotate-180" : "rotate-0"
@@ -52,7 +57,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavClick }) => 
               background: "linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)",
             }}
           />
-          {/* Inner Logo Content */}
           <div className="absolute inset-[2px] bg-bg rounded-full flex items-center justify-center">
             <span className="font-display italic text-[13px] text-text-primary/90 font-bold mt-[1px]">
               SP
@@ -60,23 +64,41 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavClick }) => 
           </div>
         </motion.button>
 
-        {/* 2. Divider (hidden on mobile) */}
-        <div className="hidden sm:block w-px h-5 bg-stroke mx-2" />
+        {/* 2. Mobile menu button */}
+        <button
+          type="button"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="sm:hidden flex items-center justify-center rounded-full p-2.5 text-text-primary/90 hover:bg-white/5 transition-colors duration-200"
+          aria-expanded={menuOpen}
+          aria-label="Toggle navigation menu"
+        >
+          {menuOpen ? (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          )}
+        </button>
 
-        {/* 3. Nav Links */}
-        <div className="flex items-center gap-1">
+        {/* 3. Nav links (desktop and mobile-expanded) */}
+        <div className={`${menuOpen ? "flex" : "hidden"} sm:flex items-center gap-1 overflow-x-auto`}>
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
               <button
                 key={link.id}
-                onClick={() => onNavClick(link.id)}
+                onClick={() => handleMobileNavClick(link.id)}
                 className={`text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-all duration-200 cursor-pointer ${
                   isActive
                     ? "text-text-primary bg-stroke/50 font-medium"
                     : "text-muted hover:text-text-primary hover:bg-stroke/30"
-                }`}
-              >
+                }`}>
                 {link.label}
               </button>
             );
@@ -84,14 +106,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavClick }) => 
         </div>
 
         {/* 4. Divider */}
-        <div className="w-px h-5 bg-stroke mx-2" />
+        <div className="hidden sm:block w-px h-5 bg-stroke mx-2" />
 
-        {/* 5. "Say hi" button with premium hover shadow */}
-        <a
-          href="mailto:shannonpereira1402@gmail.com"
-          className="relative text-xs sm:text-sm group rounded-full overflow-hidden p-[1px] transition-all duration-300"
+        {/* 5. Desktop say hi button */}
+        <button
+          onClick={() => handleMobileNavClick("contact")}
+          className={`${menuOpen ? "inline-flex" : "hidden"} sm:inline-flex relative text-xs sm:text-sm group rounded-full overflow-hidden p-[1px] transition-all duration-300`}
         >
-          {/* Accent gradient border on hover */}
           <span
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
             style={{
@@ -99,12 +120,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavClick }) => 
               margin: "-2px"
             }}
           />
-          {/* Inner content */}
           <span className="relative flex items-center gap-1 bg-surface rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-text-primary border border-white/5 group-hover:border-transparent transition-colors duration-200">
             Say hi <span className="inline-block transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">↗</span>
           </span>
-        </a>
+        </button>
       </div>
+
+      {/* mobile menu renders inside the main pill when open - no separate dropdown */}
     </nav>
   );
 };
