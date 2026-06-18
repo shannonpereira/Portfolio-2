@@ -19,7 +19,6 @@ export const SkillSphere = memo(({ node, selected, dimmed, onSelect, onHover }: 
   const [hovered, setHovered] = useState(false)
 
   // Idle rotation seed
-  const spin = useMemo(() => 0.05 + Math.random() * 0.06, [])
   const phase = useMemo(() => Math.random() * Math.PI * 2, [])
 
   useEffect(() => {
