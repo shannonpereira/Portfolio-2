@@ -1,86 +1,195 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 👋 Hi, I'm Shannon Pereira
 
-Currently, two official plugins are available:
+### Full-Stack Developer • Software Engineer • UI Enthusiast
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Crafting performant applications, beautiful interfaces, and meaningful developer experiences.
 
-## React Compiler
+<p align="center">
+  <a href="https://shannon-portfolio-psi.vercel.app/">🌐 Portfolio</a> •
+  <a href="https://github.com/YOUR_USERNAME">GitHub</a> •
+  <a href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a>
+</p>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:2563EB&height=220&section=header&text=Welcome!&fontSize=45&fontColor=ffffff"/>
 
-## Expanding the ESLint configuration
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  # new-folder6
+# 🚀 About
 
-  Vite + React + TypeScript starter project.
+This repository contains the source code for my personal portfolio.
 
-  This repository uses Vite, React 19, and TypeScript. It includes ESLint and Tailwind-related tooling.
+Rather than being just another portfolio website, this project is designed to be an interactive experience that reflects how I approach software engineering—clean architecture, polished UI, smooth animations, and attention to detail.
 
-  **Quickstart**
+The goal is simple:
 
-  Prerequisites:
-  - Node.js 18+ (or the version compatible with your installed packages)
+> **Build experiences that feel as good as they perform.**
 
-  Install dependencies:
+---
 
-  ```bash
-  npm install
-  ```
+# ✨ Features
 
-  Run development server:
+- 🎨 Modern UI with responsive design
+- ⚡ Lightning-fast performance powered by Vite
+- 📱 Fully responsive across devices
+- 🎭 Interactive animations
+- 🧩 Component-driven architecture
+- 🌌 Immersive visual experience
+- ♿ Accessibility-conscious design
+- 🔥 Optimized production build
 
-  ```bash
-  npm run dev
-  ```
+---
 
-  Build for production:
+# 🛠 Tech Stack
 
-  ```bash
-  npm run build
-  ```
+### Frontend
 
-  Preview production build locally:
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
 
-  ```bash
-  npm run preview
-  ```
+### Libraries
 
-  Run linter:
+- Framer Motion
+- Three.js / React Three Fiber
+- React Icons
 
-  ```bash
-  npm run lint
-  ```
+### Tooling
 
-  Available scripts (from `package.json`):
-  - `dev`: starts Vite dev server
-  - `build`: runs `tsc -b` then `vite build`
-  - `preview`: previews the production build (`vite preview`)
-  - `lint`: runs `eslint .`
+- ESLint
+- npm
+- Vercel
 
-  Project structure (important files):
-  - [index.html](index.html)
-  - [vite.config.ts](vite.config.ts)
-  - [tsconfig.json](tsconfig.json)
-  - [src/main.tsx](src/main.tsx)
-  - [src/App.tsx](src/App.tsx)
+---
 
-  Git and environment notes:
-  - A `.gitignore` has been added to ignore `node_modules`, build outputs (`dist`, `build`, `.vite`), caches, local environment files (`.env`), editor settings (`.vscode`) and OS files like `.DS_Store`.
-  - Keep a sample env file like `.env.example` in the repo and do not commit real secrets.
+# 📂 Project Structure
 
-  Contributing:
-  - Fork and open a PR. Keep changes small and focused.
+```
+src/
+│
+├── components/
+├── sections/
+├── assets/
+├── hooks/
+├── lib/
+├── styles/
+│
+├── App.tsx
+└── main.tsx
+```
 
-  License: add a `LICENSE` file if you intend to open-source this project.
+---
 
-  If you'd like, I can also:
-  - add a `CONTRIBUTING.md` or `LICENSE`
-  - initialize a Git repository and make an initial commit
-  - help set up a GitHub Actions workflow for CI
+# 🚀 Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/portfolio.git
+```
+
+Navigate into the project
+
+```bash
+cd portfolio
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run locally
+
+```bash
+npm run dev
+```
+
+Build for production
+
+```bash
+npm run build
+```
+
+Preview production build
+
+```bash
+npm run preview
+```
+
+---
+
+# 💻 Philosophy
+
+I believe great software isn't just functional.
+
+It should be
+
+- Fast
+- Elegant
+- Maintainable
+- Accessible
+- Delightful to use
+
+Every project I build aims to balance engineering excellence with thoughtful design.
+
+---
+
+# 📸 Preview
+
+> Visit the live portfolio
+
+### 🌐 https://shannon-portfolio-psi.vercel.app/
+
+---
+
+# 📈 Performance
+
+✔ Optimized bundle
+
+✔ Responsive
+
+✔ Type-safe
+
+✔ SEO-friendly
+
+✔ Modern React Architecture
+
+---
+
+# 🤝 Connect
+
+If you'd like to collaborate, discuss ideas, or simply connect, feel free to reach out.
+
+<div align="center">
+
+### 🌍 Portfolio
+
+https://shannon-portfolio-psi.vercel.app/
+
+### 💼 LinkedIn
+
+https://linkedin.com/in/YOUR_LINKEDIN
+
+### 📧 Email
+
+YOUR_EMAIL
+
+</div>
+
+---
+
+<div align="center">
+
+### Thanks for stopping by!
+
+⭐ If you enjoyed this project, consider giving it a star.
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:0F172A&height=120&section=footer"/>
+
+</div>
