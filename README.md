@@ -8,8 +8,8 @@ Crafting performant applications, beautiful interfaces, and meaningful developer
 
 <p align="center">
   <a href="https://shannon-portfolio-psi.vercel.app/">🌐 Portfolio</a> •
-  <a href="https://github.com/YOUR_USERNAME">GitHub</a> •
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a>
+  <a href="https://github.com/shannonpereira/">GitHub</a> •
+  <a href="https://www.linkedin.com/in/shannon-pereira-b999b7228/">LinkedIn</a>
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:2563EB&height=220&section=header&text=Welcome!&fontSize=45&fontColor=ffffff"/>
@@ -174,11 +174,11 @@ https://shannon-portfolio-psi.vercel.app/
 
 ### 💼 LinkedIn
 
-https://linkedin.com/in/YOUR_LINKEDIN
+https://www.linkedin.com/in/shannon-pereira-b999b7228/
 
 ### 📧 Email
 
-YOUR_EMAIL
+shannonpereira1402@gmail.com
 
 </div>
 
